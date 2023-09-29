@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     # Third party apps
     'corsheaders',
     'django_middleware_global_request',
+    'django_filters',
     "rest_framework",
+    # Custom apps
+    'info'
 ]
 
 MIDDLEWARE = [
@@ -142,6 +145,10 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.OrderingFilter'
+    ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
 }
@@ -181,7 +188,7 @@ JAZZMIN_SETTINGS = {
 
     # List of model admins to search from the search bar, search bar omitted if excluded
     # If you want to use a single search field you dont need to use a list, you can use a simple string
-    "search_model": ["auth.Group", "auth.User"],
+    "search_model": ["auth.User"],
 
     # Field name on user model that contains avatar ImageField/URLField/Charfield or a callable that receives the user
     "user_avatar": None,
@@ -234,17 +241,10 @@ JAZZMIN_SETTINGS = {
     # for the full list of 5.13.0 free icon classes
     "icons": {
         "auth": "fas fa-users-cog",
-        "auth.Group": "fas fa-users",
         "auth.User": "fas fa-user",
-        "info.aboutus": "fas fa-info",
-        "info.contactus": "fas fa-headset",
-        "info.cookiepolicy": "fas fa-cookie-bite",
-        "info.faqs": "fas fa-question",
-        "info.headerimage": "fas fa-images",
-        "info.privacypolicy": "fas fa-user-secret",
-        "info.termsofservice": "fas fa-handshake",
-        "info.maininfo": "fas fa-server",
-        "info.teammember": "fas fa-users-cog"
+        "info.CaseStudy": "fas fa-paste",
+        "info.CaseStudySection": "fas fa-headset",
+        "info.DribbleWork": "fas fa-server",
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
@@ -284,11 +284,6 @@ JAZZMIN_SETTINGS = {
     "changeform_format_overrides": {},
     # Add a language dropdown into the admin
     "language_chooser": False,
-}
-
-JAZZMIN_UI_TWEAKS = {
-    "navbar": "navbar-dark",
-    "theme": "darkly",
 }
 
 
