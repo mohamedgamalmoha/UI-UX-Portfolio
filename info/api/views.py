@@ -5,17 +5,17 @@ from .filters import CaseStudySectionFilter
 from .serializers import CaseStudySerializer, CaseStudySectionSerializer, DribbleWorkSerializer
 
 
-class CaseStudyAPIView(ListAPIView):
+class CaseStudyListAPIView(ListAPIView):
     queryset = CaseStudy.objects.active()
     serializer_class = CaseStudySerializer
 
 
-class CaseStudySectionAPIView(ListAPIView):
+class CaseStudySectionListAPIView(ListAPIView):
     queryset = CaseStudySection.objects.active()
     serializer_class = CaseStudySectionSerializer
     filterset_class = CaseStudySectionFilter
 
 
-class DribbleWorkSectionAPIView(ListAPIView):
+class DribbleWorkSectionListAPIView(ListAPIView):
     queryset = DribbleWork.objects.active()
     serializer_class = DribbleWorkSerializer
