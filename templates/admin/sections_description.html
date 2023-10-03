@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- sections -->
+<div style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column;text-align: center">
+    <h2 style="font-size: 2rem; font-weight: bold;">Section Layout Description</h2>
+    <p style="font-size: 1.5rem;">Determines the section layout on the detail page</p>
+</div>
+<div style="display: flex; gap: 2rem; padding: 2rem; max-width: 1200px; width: 100%; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: space-between;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center;">Text Only Layout</h2>
+        <img style="width: 100%;" src="{% static 'images/admin_docs_text_only.png' %}" alt="">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: space-between;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center;">Quote Layout</h2>
+        <img style="width: 100%;" src="{% static 'images/admin_docs_quote.png' %}" alt="">
+    </div>
+</div>
+<div style="display: flex; gap: 2rem; padding: 2rem; max-width: 1200px; width: 100%; margin: 0 auto;">
+    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: space-between;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center;">Image Full Width Layout</h2>
+        <img style="width: 100%;" src="{% static 'images/admin_docs_img_full.png' %}" alt="">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: space-between;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center;">Cards Layout</h2>
+        <img style="width: 100%;" src="{% static 'images/admin_docs_card.png' %}" alt="">
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 1rem; justify-content: space-between;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center;">Image Right/Left Layout</h2>
+        <img style="width: 100%;" src="{% static 'images/admin_docs_img_left_right.png' %}" alt="">
+    </div>
+</div>
+
+<!-- arrange -->
+<div style="max-width: 1200px; width: 100%; margin: 0 auto; padding: 2rem; display: flex; flex-direction: column;text-align: center">
+    <h2 style="font-size: 2rem; font-weight: bold;">Re Arrange sections</h2>
+    <p style="font-size: 1.5rem;">
+        Number field determines the display sequence of sections on the front page. A section with order number '1' will be
+        shown first, followed by sections with order number '2', and so on.
+        <strong>
+            <br>
+            Ensure each section has a unique order number for accurate positioning.
+        </strong>
+    </p>
+</div>

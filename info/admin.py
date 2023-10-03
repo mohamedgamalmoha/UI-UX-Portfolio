@@ -22,6 +22,7 @@ class CaseStudyAdmin(admin.ModelAdmin):
     list_filter = ('is_active', )
     search_fields = ('title', 'sub_text', 'role', 'collaborators', 'deliverables')
     inlines = [CaseStudySectionInlineAdmin]
+    change_form_template = 'admin/section_change_form.html'
 
 
 class DribbleWorkAdmin(admin.ModelAdmin):
