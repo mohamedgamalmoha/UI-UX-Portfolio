@@ -1,16 +1,19 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group
 
+from .forms import CaseStudySectionInlineFormset
 from .models import CaseStudy, CaseStudySection, DribbleWork
 
 
 class CaseStudySectionInlineAdmin(admin.TabularInline):
     model = CaseStudySection
+    formset = CaseStudySectionInlineFormset
     extra = 1
     min_num = 3
     max_num = None
     can_delete = True
     show_change_link = True
+    readonly_fields = ('case_study', 'create_at', 'update_at')
 
 
 class CaseStudyAdmin(admin.ModelAdmin):
